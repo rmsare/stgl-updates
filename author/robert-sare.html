@@ -20,33 +20,7 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://rmsare.github.io/stgl-updates/driver-update.html">Switching video drivers</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2017-02-17T19:47:00-08:00">
-                Published: Fri 17 February 2017
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://rmsare.github.io/stgl-updates/author/robert-sare.html">Robert Sare</a>
-        </address>
-<p>In <a href="https://rmsare.github.io/stgl-updates/category/updates.html">Updates</a>.</p>
-<p>tags: <a href="https://rmsare.github.io/stgl-updates/tag/updates.html">updates</a> <a href="https://rmsare.github.io/stgl-updates/tag/system.html">system</a> <a href="https://rmsare.github.io/stgl-updates/tag/display.html">display</a> </p>
-</footer><!-- /.post-info --><p>There is a display issue in the Benuku VNC related to the NVIDIA driver on <code>hilley-agisoft-linux</code>. </p>
-<p>OpenGL will not render Photoscan interface items correctly when the NVIDIA 340.101 driver for our GeForce 740 series graphics card is loaded.</p>
-<p>We plan to switch to the Nouveau open source driver in the near future. </p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://rmsare.github.io/stgl-updates/x-issues.html" rel="bookmark"
-                           title="Permalink to X server issues fixed">X server issues fixed</a></h1>
-                </header>
-
-                <div class="entry-content">
+                    <h1 class="entry-title"><a href="https://rmsare.github.io/stgl-updates/x-issues.html">X server issues fixed</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2017-02-11T13:34:00-08:00">
                 Published: Sat 11 February 2017
@@ -57,10 +31,25 @@
         </address>
 <p>In <a href="https://rmsare.github.io/stgl-updates/category/updates.html">Updates</a>.</p>
 <p>tags: <a href="https://rmsare.github.io/stgl-updates/tag/updates.html">updates</a> <a href="https://rmsare.github.io/stgl-updates/tag/system.html">system</a> <a href="https://rmsare.github.io/stgl-updates/tag/display.html">display</a> <a href="https://rmsare.github.io/stgl-updates/tag/x11.html">x11</a> </p>
-</footer><!-- /.post-info -->                
-                <a class="readmore" href="https://rmsare.github.io/stgl-updates/x-issues.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+</footer><!-- /.post-info --><p>Display problems and a potential vulnerability related to our remote access system have been fixed. </p>
+<h2>The problem:</h2>
+<ol>
+<li>We enabled all users to run X servers remotely (in <code>/etc/X11/XWrapper.config</code>).</li>
+<li>Remote X session run through <code>Xdummy</code> locked the primary display.</li>
+<li>Changes in the user-level <code>xorg.conf</code> caused rendering problems on the lab display.</li>
+<li>If the remote user executed <code>startx</code> to directly initialize an X session (no dummy display), this session supplanted the root session on the lab display. Yikes!</li>
+</ol>
+<h2>The solution:</h2>
+<ul>
+<li>Disabled remote execution of X server</li>
+<li>Remote display access and display sharing are now through <a href="http://wiki.x2go.org/doku.php/doc:usage:desktop-sharing"><code>x2go</code></a>.</li>
+</ul>
+<p>A side-effect of this is that the KDE desktop environment is now available on <code>hilley-agisoft-linux</code>. (This is used by <code>x2go</code>.)</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
 
             <li><article class="hentry">
                 <header>
