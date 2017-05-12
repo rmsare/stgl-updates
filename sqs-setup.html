@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>STGL update blog - misc</title>
+        <title>SQS setup for celery applications</title>
         <link rel="stylesheet" href="https://rmsare.github.io/stgl-updates/theme/css/main.css" />
 
         <!--[if IE]>
@@ -18,10 +18,15 @@
                     <li><a href="https://rmsare.github.io/stgl-updates/category/updates.html">Updates</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://rmsare.github.io/stgl-updates/sqs-setup.html" rel="bookmark"
+           title="Permalink to SQS setup for celery applications">SQS setup for celery applications</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://rmsare.github.io/stgl-updates/sqs-setup.html">SQS setup for celery applications</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2017-04-18T13:22:00-07:00">
                 Published: Tue 18 April 2017
@@ -32,7 +37,7 @@
         </address>
 <p>In <a href="https://rmsare.github.io/stgl-updates/category/misc.html">misc</a>.</p>
 <p>tags: <a href="https://rmsare.github.io/stgl-updates/tag/aws.html">AWS</a> <a href="https://rmsare.github.io/stgl-updates/tag/python.html">Python</a> </p>
-</footer><!-- /.post-info --><p>This is a summary of steps needed to get <code>celery</code> working with Amazon S3 bucket storage and the Simple Queue Service.</p>
+</footer><!-- /.post-info -->      <p>This is a summary of steps needed to get <code>celery</code> working with Amazon S3 bucket storage and the Simple Queue Service.</p>
 <ol>
 <li>
 <p>The SQS broker works with boto &lt;= 2.9.2, celery &lt;= 3.1.24, kombu &lt;= 3.0.37. </p>
@@ -53,8 +58,11 @@
 <li>If no prefix is specified, individual workers will not create their own pidbox'ed queues.</li>
 </ul>
 </li>
-</ol>                </article>
-            </aside><!-- /#featured -->
+</ol>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
         <section id="extras" class="body">
         </section><!-- /#extras -->
 
